@@ -1,11 +1,10 @@
+// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: 'export', // <-- This is the critical line
   images: {
-    unoptimized: true,
+    unoptimized: true, // Required for static exports
   },
-}
+};
 
-export default nextConfig
+module.exports = nextConfig;
