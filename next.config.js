@@ -1,21 +1,15 @@
-// const nextConfig = {
-//   output: 'export',
-//   images: {
-//     unoptimized: true,
-//   },
-// };
-
-// export default nextConfig;
-
+// next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-  webpack: (config, { isServer }) => {
-    // Add alias for '@' to point to the 'src' or 'app' directory
-    config.resolve.alias['@'] = __dirname + '/app';
-    return config;
+  // Use the turbopack section for Turbopack-specific settings
+  turbopack: {
+    resolveAlias: {
+      '@': './app', // Map '@' to the 'app' directory
+    },
   },
 };
 
