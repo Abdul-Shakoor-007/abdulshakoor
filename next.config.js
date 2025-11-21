@@ -1,7 +1,7 @@
 const nextConfig = {
-  output: 'export',
+  output: 'export', // <-- This must be present for static export
   images: {
-    unoptimized: true,
+    unoptimized: true, // <-- This must be present for static export
   },
 };
 
